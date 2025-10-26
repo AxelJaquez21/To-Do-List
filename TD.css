@@ -1,0 +1,135 @@
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --background-color-container: #f0f0f0;
+    --border-color: #2c7d1f;
+    
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    
+}
+
+/* Title Container  light/dark mode toggle */
+.dark-mode {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --background-color-container: #1e1e1e;
+}
+
+.mode-switch {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container h1 {
+    
+   text-align: center;
+   color: var(--text-color);
+    font-size: 2.4em;
+
+}
+
+hr {
+    border: 2px solid var(--text-color);
+    width: 75%;
+}
+
+.main-body-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.input-container {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;          /* keep input vertically centered with the button */
+   border-radius: 2rem;
+   padding: 3rem;
+   gap: 0.6rem;
+   width: 30%;
+   background: var(--background-color-container);
+}
+
+.input-container h2  {
+     width: 50%;
+    text-align: center;
+    color: var(--text-color);
+    margin: 0 0 1rem 0;
+}
+
+/* full-width input that leaves room on the right for the button */
+#task-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 1.25rem;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 3.5rem 0.5rem 0.75rem; /* right padding reserves space for the button */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* position the button inside the input area on the right */
+#add-task-button{
+    position: absolute;
+    right: 3.4rem;               
+    top: calc(52.5% + 1.5rem);      
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 32px;
+    background-color: var(--border-color);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+}
+
+/*
+
+
+full-width input that leaves room on the right for the button 
+#task-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 1.25rem;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 3.5rem 0.5rem 0.75rem;  right padding reserves space for the button 
+    box-sizing: border-box;
+    margin: 0;
+}
+
+position the button inside the input area on the right 
+#add-task-button{
+    position: absolute;
+    right: 3.4rem;               matches the input's right padding + container padding 
+    top: calc(50% + 1.5rem);      adjust to vertically center relative to input when stacked 
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 32px;
+    background-color: var(--border-color);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+} 
+
+*/

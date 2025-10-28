@@ -1,0 +1,70 @@
+#add-task-button {
+    margin-top: 10px;
+}
+
+
+.input-container h2  {
+     width: 50%;
+    text-align: center;
+    color: var(--text-color);
+    margin: 0 0 1rem 0;
+}
+
+/* full-width input that leaves room on the right for the button */
+#task-input {
+    width: 100%;
+    height: 40px;
+    border-radius: 1.25rem;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 3.5rem 0.5rem 0.75rem; /* right padding reserves space for the button */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* position the button inside the input area on the right */
+#add-task-button{
+    position: absolute;
+    right: 3.4rem;               
+    top: calc(50.5% + 1.5rem);      
+    transform: translateX(-400px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 32px;
+    background-color: var(--border-color);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+}
+
+
+.tableData {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+/* Style and shrink the table */
+#taskColums {
+    border-collapse: collapse;
+    width: 70%; /* shrink width to center better */
+    max-width: 600px;
+    background-color: var(--background-color-container);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#taskColums th, #taskColums td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+}
+
+#taskColums th {
+    background-color: #d1f3d1;
+    color: var(--text-color);
+}

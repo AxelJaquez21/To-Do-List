@@ -4,13 +4,37 @@ function myFunction() {
     element.classList.toggle("dark-mode");
 }
 
-// date and time display //
-function updateTime() {
-    const now = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const dateString = now.toLocaleDateString(undefined, options);
-    const timeString = now.toLocaleTimeString();
-    document.getElementById('date-time').innerHTML = dateString + ' ' + timeString;
+function addToTable() {
+    // Get input values
+    const taskName = document.getElementById("task-name").value.trim();
+    const dueDate = document.getElementById("due-date").value;
+    const priority = document.getElementById("priority").value.trim();
+    const category = document.getElementById("category").value.trim();
+    const assignee = document.getElementById("assignee").value.trim();
+
+    // Validation: make sure there's at least a task name
+    if (taskName === "") {
+        alert("Please enter a task name!");
+        return;
+    }
+
+    // Get the table body
+    const tableBody = document.getElementById("task-body");
+
+    // Create a new row
+    const newRow = tableBody.insertRow();
+
+    // Insert cells and fill them
+    newRow.insertCell(0).textContent = taskName;
+    newRow.insertCell(1).textContent = dueDate || "—";
+    newRow.insertCell(2).textContent = priority || "—";
+    newRow.insertCell(3).textContent = category || "—";
+    newRow.insertCell(4).textContent = assignee || "—";
+
+    // Clear inputs
+    document.getElementById("task-name").value = "";
+    document.getElementById("due-date").value = "";
+    document.getElementById("priority").value = "";
+    document.getElementById("category").value = "";
+    document.getElementById("assignee").value = "";
 }
-setInterval(updateTime, 1000);
-updateTime();

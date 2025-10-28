@@ -18,18 +18,38 @@
             <buttpon onclick ="myFunction()"> <img src="/toggle.png" with="65px" height="65px"> </button>
         </div>
     </div>
+
     <hr>
 
     <!-- main Body container -->
+    <div class="input-container">
+        <h2>✅ Task Tracker</h2>
 
-    <div class="main-body-container"> 
-        <div class="input-container">
-            <h2> ✅ Task Tracker</h2>
-            <input type="text" id="task-input" placeholder="Add a new task...">
-            <button id="add-task-button">Add Task</button>
-        </div>
+        <input type="text" id="task-name" placeholder="Task name...">
+        <input type="date" id="due-date">
+        <input type="text" id="priority" placeholder="Priority (e.g., High, Medium, Low)">
+        <input type="text" id="category" placeholder="Category (e.g., Work, Personal)">
+        <input type="text" id="assignee" placeholder="Assignee (optional)">
+        
+        <button id="add-task-button" onclick="addToTable()">Add Task</button>
 
     </div>
+
+    <div class="tableData">
+            <table id="taskColums">
+                <thead>
+                    <tr>
+                        <th>Task-Name</th>
+                        <th>Due-Date</th>
+                        <th>Assignment-Priority</th>
+                        <th>Category</th>
+                        <th>Assigneé</th>
+                    </tr>
+                </thead>
+                <tbody id="task-body"></tbody>
+            </table>
+      </div>
+
 
 
 </body>

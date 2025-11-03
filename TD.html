@@ -1,64 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> To-Do List </title>
-    <link rel="stylesheet" href="TD.css">
-    <script src="TD.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="TD.css">
+  <script src="TD.js" defer></script>
 </head>
-
 <body>
-    <!-- title container -->
-     <!-- Contains: tittle, date n time, night and day switch-->
-     <div class="title-container">
-        <h1> To-Do List </h1>
-
-           <!-- Time clock -->
-         <div id="current-time" aria-live="polite"></div>
-
-        <div class="mode-switch">
-            <buttpon onclick ="myFunction()"> <img src="/toggle.png" with="65px" height="65px"> </button>
-        </div>
+  <!-- Title & Time -->
+  <div class="title-container">
+    <h1>To-Do List</h1>
+    <div id="current-time" aria-live="polite"></div>
+    <div class="mode-switch">
+      <button type="button" onclick="toggleDarkMode()">
+        <img src="/toggle.png" width="65" height="65" alt="Toggle Dark/Light Mode">
+      </button>
     </div>
+  </div>
+  
+  <hr>
 
-    <hr>
-
-    <!-- main Body container -->
-    <div class="input-container">
-        <h2>✅ Task Tracker</h2>
-
-        <div class="task-input-row">
-            <div class="task-input-wrapper">
-                <input type="text" id="task-name" placeholder="Task name...">
-                <button id="add-task-button" onclick="addToTable()" aria-label="Add Task">Add</button>
-            </div>
-            <input type="text" id="task-details" placeholder="Enter Details...">
-            <input type="date" id="due-date">
-            <input type="text" id="priority" placeholder="Priority (e.g., High, Medium, Low)">
-            <input type="text" id="category" placeholder="Category (e.g., Work, Personal)">
-            <input type="text" id="assignee" placeholder="Assignee (optional)">
-        </div>
-
-    </div>
-
-    <div class="tableData">
-            <table id="taskColums">
-                <thead>
-                    <tr>
-                        <th>Task-Name</th>
-                        <th>Task Details</th>
-                        <th>Due-Date</th>
-                        <th>Assignment-Priority</th>
-                        <th>Category</th>
-                        <th>Assigneé</th>
-                    </tr>
-                </thead>
-                <tbody id="task-body"></tbody>
-            </table>
+  <!-- Task Input -->
+  <div class="input-container">
+    <h2>✅ Task Tracker</h2>
+    <div class="task-input-row">
+      <div class="task-input-wrapper">
+        <input type="text" id="task-name" placeholder="Task name...">
+        <button type="button" id="add-task-button" onclick="addToTable()" aria-label="Add Task">Add</button>
       </div>
+      <input type="text" id="task-details" placeholder="Enter Details...">
+      <input type="date" id="due-date">
+      <select id="priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <input type="text" id="category" placeholder="Category (e.g., Work, Personal)">
+      <input type="text" id="assignee" placeholder="Assignee (optional)">
+    </div>
+  </div>
 
+  <!-- Active Tasks Table -->
+  <div class="tableData">
+    <h3>Active Tasks</h3>
+    <table id="task-columns">
+      <thead>
+        <tr>
+          <th>Task Name</th>
+          <th>Details</th>
+          <th>Due Date</th>
+          <th>Priority</th>
+          <th>Category</th>
+          <th>Assignee</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="task-body"></tbody>
+    </table>
+  </div>
 
-
+  <!-- Completed Tasks Table -->
+  <div class="tableData">
+    <h3>Completed Tasks</h3>
+    <table id="completed-section">
+      <thead>
+        <tr>
+          <th>Task Name</th>
+          <th>Details</th>
+          <th>Due Date</th>
+          <th>Priority</th>
+          <th>Category</th>
+          <th>Assignee</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="completed-body"></tbody>
+    </table>
+  </div>
 </body>
 </html>

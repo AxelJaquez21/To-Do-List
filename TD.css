@@ -1,7 +1,6 @@
 :root {
     --background-color: #ffffff;
     --text-color: #000000;
-    --background-color-container: #f0f0f0;
     --border-color: #2c7d1f;
     
 }
@@ -17,6 +16,8 @@ body {
     --background-color: #121212;
     --text-color: #ffffff;
     --background-color-container: #1e1e1e;
+    --border-color-dk-mode: #020601;
+    
 }
 
 .mode-switch {
@@ -39,6 +40,17 @@ body {
 
 }
 
+/* Keep clock at top right with smaller font */
+        #current-time {
+            position: absolute;
+            top: 30px;
+            right: 15px;
+            font-size: 1.8rem;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+
 hr {
     border: 2px solid var(--text-color);
     width: 75%;
@@ -58,6 +70,7 @@ body {
     align-items: center;
     flex-direction: column;
     margin-top: 40px;
+
 }
 
 
@@ -81,6 +94,7 @@ body {
 /* make container relative so the button can be positioned inside the input */
 .input-container {
     position: relative;
+
 }
 
 /* inputs inside container keep full width of the container */
@@ -111,12 +125,38 @@ body {
     margin: 0;
 }
 
-/* position the button inside the input area on the right */
+/* layout & spacing for the row of inputs (now stacked as a column) */
+.task-input-row {
+    display: flex;
+    flex-direction: column; /* stack inputs vertically */
+    gap: 0.75rem;           /* space between inputs */
+    align-items: stretch;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* make individual controls take full width in column layout */
+.task-input-row input[type="text"],
+.task-input-row input[type="date"],
+.task-input-row .task-input-wrapper {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+}
+
+/* ensure the wrapper for the task+button keeps layout */
+.task-input-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    position: relative;
+}
+
+/* adjust the add button positioning for the stacked layout */
 #add-task-button {
     position: absolute;
     right: 0.75rem;
-    right: 3.4rem;               
-    top: calc(27.3% + 1.5rem);  
+    top: 50%;
     transform: translateY(-50%);
     display: inline-flex;
     align-items: center;
@@ -149,14 +189,16 @@ body {
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
+   
 }
 
 #taskColums th, #taskColums td {
     border: 1px solid var(--border-color);
     padding: 10px;
+  
 }
 
 #taskColums th {
     background-color: #d1f3d1;
-    color: var(--text-color);
+    color: var(--border-color-dk-mode);
 }

@@ -46,3 +46,12 @@ function addToTable() {
     document.getElementById("category").value = "";
     document.getElementById("assignee").value = "";
 }
+
+// time clock
+
+(function updateTime(){
+            const el = document.getElementById('current-time');
+            function tick(){ el.textContent = new Date().toLocaleTimeString(); }
+            tick();
+            setInterval(tick,1000);
+})();

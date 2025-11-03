@@ -78,6 +78,11 @@ body {
     margin: 0 auto;
 }
 
+/* make container relative so the button can be positioned inside the input */
+.input-container {
+    position: relative;
+}
+
 /* inputs inside container keep full width of the container */
 .input-container input {
     width: 100%;
@@ -88,13 +93,8 @@ body {
     box-sizing: border-box;
 }
 
-#add-task-button {
-    margin-top: 10px;
-}
-
-
 .input-container h2  {
-     width: 50%;
+    width: 50%;
     text-align: center;
     color: var(--text-color);
     margin: 0 0 1rem 0;
@@ -106,27 +106,29 @@ body {
     height: 40px;
     border-radius: 1.25rem;
     border: 1px solid var(--border-color);
-    padding: 0.5rem 3.5rem 0.5rem 0.75rem; /* right padding reserves space for the button */
+    padding: 0.5rem 5.25rem 0.5rem 0.75rem; /* increased right padding to reserve space for the button */
     box-sizing: border-box;
     margin: 0;
 }
 
 /* position the button inside the input area on the right */
-#add-task-button{
+#add-task-button {
     position: absolute;
+    right: 0.75rem;
     right: 3.4rem;               
-    top: calc(26% + 1.5rem);      
-    transform: translateX(-510px);
+    top: calc(27.3% + 1.5rem);  
+    transform: translateY(-50%);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
+    width: 72px;
     height: 32px;
     background-color: var(--border-color);
     color: white;
     border: none;
     border-radius: 0.75rem;
     cursor: pointer;
+    z-index: 2;
 }
 
 

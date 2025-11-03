@@ -25,14 +25,17 @@
     <div class="input-container">
         <h2>✅ Task Tracker</h2>
 
-        <input type="text" id="task-name" placeholder="Task name...">
-        <input type="date" id="due-date">
-        <input type="text" id="priority" placeholder="Priority (e.g., High, Medium, Low)">
-        <input type="text" id="category" placeholder="Category (e.g., Work, Personal)">
-        <input type="text" id="assignee" placeholder="Assignee (optional)">
-        
-        <button id="add-task-button" onclick="addToTable()">Add Task</button>
-
+        <div class="task-input-row">
+            <div class="task-input-wrapper">
+                <input type="text" id="task-name" placeholder="Task name...">
+                <button id="add-task-button" onclick="addToTable()" aria-label="Add Task">Add</button>
+            </div>
+            <input type="text" id="task-details" placeholder="Enter Details...">
+            <input type="date" id="due-date">
+            <input type="text" id="priority" placeholder="Priority (e.g., High, Medium, Low)">
+            <input type="text" id="category" placeholder="Category (e.g., Work, Personal)">
+            <input type="text" id="assignee" placeholder="Assignee (optional)">
+        </div>
     </div>
 
     <div class="tableData">
@@ -40,6 +43,7 @@
                 <thead>
                     <tr>
                         <th>Task-Name</th>
+                        <th>Task Details</th>
                         <th>Due-Date</th>
                         <th>Assignment-Priority</th>
                         <th>Category</th>
